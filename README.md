@@ -2,11 +2,6 @@
 
  <div align="center">
 
-<!-- HERO BANNER -->
-<img src="https://img.shields.io/badge/ISO%2FRTO-Risk%20Intelligence%20Platform-0d1117?style=for-the-badge&logo=lightning&logoColor=F5A623&labelColor=0d1117" alt="Platform Banner" width="700"/>
-
-<br/><br/>
-
 # ⚡ ISO/RTO Risk Intelligence & Exposure Analytics 
 
 ### _Real-time market risk quantification, congestion forecasting, and position exposure analytics across North American wholesale energy markets_
