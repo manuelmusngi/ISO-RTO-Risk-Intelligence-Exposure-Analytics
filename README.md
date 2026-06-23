@@ -258,6 +258,110 @@ erDiagram
 │  🦞 ISO-NE       │  ~1,000   │  5-min RT   │  DA/RT LMP, FTR                │
 └──────────────────┴───────────┴─────────────┴────────────────────────────────┘
 ```
+## 📁 Repository Structure
+
+iso-rto-risk-intelligence/\
+│
+├── README.md\
+├── LICENSE\
+├── pyproject.toml\
+├── requirements.txt\
+├── .gitignore\
+│
+├── configs/\
+│   ├── data_sources.yaml\
+│   ├── positions.yaml\
+│   ├── scenarios.yaml\
+│   ├── risk_limits.yaml\
+│   └── dashboard.yaml\
+│
+├── data/\
+│   ├── raw/\
+│   ├── processed/\
+│   └── examples/\
+│       ├── sample_lmps.csv\
+│       ├── sample_positions.csv\
+│       └── sample_constraints.csv\
+│
+├── docs/\
+│   ├── architecture/\
+│   │   ├── system_architecture.png\
+│   │   ├── data_flow_diagram.png\
+│   │   └── module_interactions.png\
+│   ├── methodology/\
+│   │   ├── exposure_models.md\
+│   │   ├── scenario_engine.md\
+│   │   ├── risk_metrics.md\
+│   │   └── data_dictionary.md\
+│   ├── user_guides/\
+│   │   ├── trader_console_guide.md\
+│   │   ├── operator_dashboard_guide.md\
+│   │   └── risk_report_guide.md\
+│   └── research/\
+│       ├── iso_rto_market_notes.md\
+│       └── volatility_and_tail_risk.md\
+│
+├── notebooks/\
+│   ├── 01_data_ingestion_demo.ipynb\
+│   ├── 02_exposure_engine_walkthrough.ipynb\
+│   ├── 03_scenario_analysis_examples.ipynb\
+│   ├── 04_risk_metrics_validation.ipynb\
+│   └── 05_dashboard_prototype.ipynb\
+│
+├── src/\
+│   ├── ingestion/\
+│   │   ├── iso_api_client.py\
+│   │   ├── data_loader.py\
+│   │   ├── schema_validation.py\
+│   │   └── utils.py\
+│   │
+│   ├── exposure/\
+│   │   ├── physical_exposure.py\
+│   │   ├── financial_exposure.py\
+│   │   ├── congestion_exposure.py\
+│   │   └── market_exposure.py\
+│   │
+│   ├── scenario/\
+│   │   ├── price_shocks.py\
+│   │   ├── outage_scenarios.py\
+│   │   ├── constraint_scenarios.py\
+│   │   └── fuel_shocks.py\
+│   │
+│   ├── risk/\
+│   │   ├── var.py\
+│   │   ├── cvar.py\
+│   │   ├── pfe.py\
+│   │   ├── sensitivities.py\
+│   │   └── pnl_attribution.py\
+│   │
+│   ├── dashboard/\
+│   │   ├── app.py\
+│   │   ├── components/\
+│   │   │   ├── exposure_heatmap.py\
+│   │   │   ├── scenario_sliders.py\
+│   │   │   └── risk_summary_cards.py\
+│   │   └── utils.py\
+│   │
+│   └── utils/\
+│       ├── logging.py\
+│       ├── config_loader.py\
+│       ├── decorators.py\
+│       └── math_utils.py\
+│
+├── tests/\
+│   ├── test_ingestion.py\
+│   ├── test_exposure.py\
+│   ├── test_scenario.py\
+│   ├── test_risk_metrics.py\
+│   └── test_dashboard.py\
+│
+└── reports/\
+    ├── daily/\
+    ├── intraday/\
+    └── samples/\
+        ├── sample_risk_report.pdf\
+        └── sample_exposure_summary.html\
+
 
 ---
 
