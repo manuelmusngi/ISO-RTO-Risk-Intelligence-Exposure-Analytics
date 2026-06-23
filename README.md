@@ -393,24 +393,44 @@ A fully lineage-tracked dbt project organized into four layers. Every model incl
 
 ```
 dbt_models/
-├── staging/               # Raw → typed, renamed, deduplicated
-│   ├── stg_lmp_caiso.sql
-│   ├── stg_lmp_ercot.sql
-│   ├── stg_lmp_miso.sql
-│   ├── stg_lmp_pjm.sql
-│   ├── stg_lmp_nyiso.sql
-│   └── stg_lmp_isone.sql
-├── intermediate/          # Business logic — decomposition, joins
-│   ├── int_lmp_unified.sql          # Cross-ISO normalized view
-│   ├── int_lmp_decomposed.sql       # Energy / Cong / Loss split
-│   └── int_binding_constraints.sql  # Constraint tagging
-├── marts/                 # Consumption-ready analytical tables
-│   ├── mart_lmp_hourly.sql
-│   ├── mart_risk_exposure.sql
-│   ├── mart_ftr_valuation.sql
-│   └── mart_portfolio_pnl.sql
-└── metrics/               # dbt Semantic Layer definitions
-    └── metrics_exposure.yml
+├── staging/                         # Raw → typed → validated
+│   ├── lmp/
+│   │   ├── stg_lmp_caiso.py
+│   │   ├── stg_lmp_ercot.py
+│   │   ├── stg_lmp_isone.py
+│   │   ├── stg_lmp_miso.py
+│   │   ├── stg_lmp_nyiso.py
+│   │   └── stg_lmp_pjm.py
+│   ├── constraints/
+│   │   └── stg_binding_constraints.py
+│   └── reference/
+│       └── stg_hub_nodes.py
+│
+├── intermediate/                    # Business logic, normalization, decomposition
+│   ├── lmp/
+│   │   ├── int_lmp_unified.py       # Cross‑ISO schema harmonization
+│   │   ├── int_lmp_decomposed.py    # Energy / Congestion / Loss split
+│   │   └── int_lmp_enriched.py      # Add hubs, weather, outages, fuel
+│   ├── constraints/
+│   │   └── int_binding_constraints.py
+│   └── risk/
+│       └── int_exposure_base.py
+│
+├── marts/                           # Consumption‑ready analytics
+│   ├── lmp/
+│   │   └── mart_lmp_hourly.py
+│   ├── risk/
+│   │   ├── mart_risk_exposure.py
+│   │   ├── mart_portfolio_pnl.py
+│   │   └── mart_var_cvar.py
+│   └── ftr/
+│       └── mart_ftr_valuation.py
+│
+└── metrics/                         # dbt Semantic Layer
+│   ├── exposure.yml
+│   ├── lmp.yml
+│   └── portfolio.yml
+
 ```
 
 ---
