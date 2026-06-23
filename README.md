@@ -49,6 +49,7 @@
 - [Key Highlights](#-key-highlights)
 - [Architecture](#-architecture)
 - [Data Sources & Market Coverage](#-data-sources--market-coverage)
+- [Project Structure](#-project-structure)
 - [Module Deep Dive](#-module-deep-dive)
 - [Quickstart](#-quickstart)
 - [Configuration](#-configuration)
