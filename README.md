@@ -1,5 +1,3 @@
- ISO/RTO Risk Intelligence & Exposure Analytics
-
  <div align="center">
 
 # ⚡ ISO/RTO Risk Intelligence & Exposure Analytics 
