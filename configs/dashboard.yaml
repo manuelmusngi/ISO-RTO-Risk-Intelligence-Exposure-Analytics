@@ -1,0 +1,106 @@
+# Dashboard configuration for trader and operator views
+
+meta:
+  title: "ISO/RTO Risk Intelligence Console"
+  environment: "dev"
+  default_view: "trader"
+  refresh_seconds: 60
+
+layout:
+  theme: "dark"
+  show_logo: true
+  logo_path: "docs/architecture/system_architecture.png"
+  sections_order:
+    - "portfolio_summary"
+    - "exposure_heatmaps"
+    - "scenario_controls"
+    - "risk_metrics"
+    - "alerts"
+
+views:
+  trader:
+    enabled: true
+    sections:
+      portfolio_summary:
+        show_pnl: true
+        show_var: true
+        show_pfe: true
+      exposure_heatmaps:
+        group_by:
+          - "iso"
+          - "zone"
+        metrics:
+          - "exposure_mw"
+          - "exposure_usd"
+      scenario_controls:
+        enabled_components:
+          - "price_shocks"
+          - "load_deviation"
+          - "fuel_shocks"
+      risk_metrics:
+        show_var: true
+        show_cvar: true
+        show_sensitivities: true
+      alerts:
+        show_limit_breaches: true
+        show_warnings: true
+
+  operator:
+    enabled: true
+    sections:
+      portfolio_summary:
+        show_pnl: false
+        show_var: true
+        show_pfe: false
+      exposure_heatmaps:
+        group_by:
+          - "iso"
+          - "interface"
+        metrics:
+          - "flow_mw"
+          - "constraint_risk_usd"
+      scenario_controls:
+        enabled_components:
+          - "outage_scenarios"
+          - "constraint_scenarios"
+      risk_metrics:
+        show_var: true
+        show_cvar: false
+        show_sensitivities: true
+      alerts:
+        show_limit_breaches: true
+        show_warnings: true
+
+  risk:
+    enabled: true
+    sections:
+      portfolio_summary:
+        show_pnl: true
+        show_var: true
+        show_pfe: true
+      exposure_heatmaps:
+        group_by:
+          - "iso"
+          - "book"
+        metrics:
+          - "exposure_usd"
+      scenario_controls:
+        enabled_components:
+          - "price_shocks"
+          - "load_deviation"
+          - "outage_scenarios"
+          - "constraint_scenarios"
+          - "fuel_shocks"
+      risk_metrics:
+        show_var: true
+        show_cvar: true
+        show_sensitivities: true
+      alerts:
+        show_limit_breaches: true
+        show_warnings: true
+
+features:
+  enable_downloads: true
+  enable_export_pdf: true
+  enable_export_csv: true
+  enable_intraday_mode: true
