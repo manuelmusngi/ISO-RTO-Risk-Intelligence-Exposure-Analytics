@@ -1,8 +1,8 @@
  <div align="center">
 
-##⚡ ISO/RTO Risk Intelligence & Exposure Analytics 
+⚡ ISO/RTO Risk Intelligence & Exposure Analytics 
 
-### _Real-time market risk quantification, congestion forecasting, and position exposure analytics across North American wholesale energy markets_
+####  _Real-time market risk quantification, congestion forecasting, and position exposure analytics across North American wholesale energy markets_
 
 <br/>
 
