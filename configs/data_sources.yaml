@@ -1,0 +1,96 @@
+# ISO/RTO data source configuration
+
+meta:
+  project_name: "iso-rto-risk-intelligence"
+  environment: "dev"
+  timezone: "US/Eastern"
+  default_iso: "MISO"
+
+storage:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  cache_dir: "data/cache"
+
+refresh:
+  lmp_minutes: 5
+  load_forecast_minutes: 15
+  outages_minutes: 30
+  constraints_minutes: 30
+  fuel_prices_minutes: 60
+
+isos:
+  MISO:
+    enabled: true
+    region: "MISO"
+    base_url: "https://api.misoenergy.org"
+    markets:
+      - DA
+      - RT
+    endpoints:
+      lmp:
+        path: "/markets/lmp"
+        params:
+          market: "RT"
+          format: "csv"
+      load_forecast:
+        path: "/markets/load-forecast"
+        params:
+          format: "csv"
+      outages:
+        path: "/operations/outages"
+        params:
+          format: "csv"
+      constraints:
+        path: "/markets/constraints"
+        params:
+          format: "csv"
+    auth:
+      type: "none"
+
+  PJM:
+    enabled: true
+    region: "PJM"
+    base_url: "https://api.pjm.com"
+    markets:
+      - DA
+      - RT
+    endpoints:
+      lmp:
+        path: "/markets/lmp"
+        params:
+          market: "RT"
+          format: "csv"
+      load_forecast:
+        path: "/markets/load-forecast"
+        params:
+          format: "csv"
+      outages:
+        path: "/operations/outages"
+        params:
+          format: "csv"
+      constraints:
+        path: "/markets/constraints"
+        params:
+          format: "csv"
+    auth:
+      type: "api_key"
+      env_var: "PJM_API_KEY"
+
+fuel_prices:
+  provider: "eia"
+  base_url: "https://api.eia.gov"
+  series:
+    henry_hub: "NG.RNGWHHD.D"
+    chicago_citygate: "NG.RNGWHHDCHCG.D"
+  auth:
+    type: "api_key"
+    env_var: "EIA_API_KEY"
+
+weather:
+  provider: "noaa"
+  base_url: "https://api.weather.gov"
+  regions:
+    - "MISO"
+    - "PJM"
+  auth:
+    type: "none"
