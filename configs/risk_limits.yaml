@@ -1,0 +1,61 @@
+# Risk limits and alert thresholds
+
+meta:
+  portfolio: "ACES Midcontinent Portfolio"
+  owner: "Trading Risk"
+  currency: "USD"
+
+var_limits:
+  horizon_days: 1
+  confidence_levels:
+    - 0.95
+    - 0.99
+  limits:
+    portfolio:
+      var_95_usd: 250000
+      var_99_usd: 400000
+    books:
+      MIDCON_POWER:
+        var_95_usd: 200000
+        var_99_usd: 350000
+
+exposure_limits:
+  by_dimension:
+    lmp:
+      max_delta_pnl_usd_per_10_usd_move: 150000
+    load:
+      max_delta_pnl_usd_per_5_pct_change: 200000
+    fuel:
+      max_delta_pnl_usd_per_1_usd_mmbtu_move: 100000
+    constraint:
+      max_delta_pnl_usd_per_10_usd_shadow_price_change: 120000
+
+congestion_limits:
+  interfaces:
+    MISO_NORTH_TO_SOUTH:
+      max_exposure_usd_per_day: 150000
+    PJM_WEST_TO_EAST:
+      max_exposure_usd_per_day: 120000
+
+ftr_limits:
+  max_notional_usd: 5000000
+  max_single_path_notional_usd: 1000000
+  max_region_concentration_pct:
+    MISO: 60
+    PJM: 60
+
+alert_thresholds:
+  var_breach_pct: 90
+  exposure_breach_pct: 85
+  congestion_breach_pct: 80
+
+notifications:
+  channels:
+    - "email"
+    - "slack"
+  email:
+    to:
+      - "risk@firm.com"
+      - "trading@firm.com"
+  slack:
+    webhook_env_var: "RISK_ALERTS_SLACK_WEBHOOK"
