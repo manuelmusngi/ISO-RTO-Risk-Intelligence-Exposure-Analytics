@@ -1,0 +1,90 @@
+# Scenario and stress testing configuration
+
+meta:
+  base_horizon_days: 7
+  num_paths: 1000
+  seed: 12345
+
+price_shocks:
+  enabled: true
+  base_sigma_usd_per_mwh: 5.0
+  scenarios:
+    - name: "mild_up"
+      type: "additive"
+      sigma_multiplier: 1.0
+      direction: "up"
+    - name: "mild_down"
+      type: "additive"
+      sigma_multiplier: 1.0
+      direction: "down"
+    - name: "moderate_up"
+      type: "additive"
+      sigma_multiplier: 2.0
+      direction: "up"
+    - name: "severe_up"
+      type: "additive"
+      sigma_multiplier: 5.0
+      direction: "up"
+
+load_deviation:
+  enabled: true
+  scenarios:
+    - name: "load_minus_5"
+      pct_change: -5
+    - name: "load_plus_5"
+      pct_change: 5
+    - name: "load_plus_10"
+      pct_change: 10
+    - name: "load_plus_20"
+      pct_change: 20
+
+outage_scenarios:
+  enabled: true
+  rules:
+    - name: "top_5_gen_forced_outage"
+      selection: "top_n_by_capacity"
+      n: 5
+      duration_hours: 24
+    - name: "single_cc_outage"
+      selection: "by_id"
+      units:
+        - "GEN_CC_MISO_01"
+      duration_hours: 12
+
+constraint_scenarios:
+  enabled: true
+  scenarios:
+    - name: "key_interface_binding"
+      type: "force_binding"
+      interfaces:
+        - "MISO_NORTH_TO_SOUTH"
+        - "PJM_WEST_TO_EAST"
+      shadow_price_usd_per_mwh: 50.0
+    - name: "constraint_relief"
+      type: "relax"
+      interfaces:
+        - "MISO_NORTH_TO_SOUTH"
+      relief_pct: 50
+
+fuel_shocks:
+  enabled: true
+  base_series: "henry_hub"
+  scenarios:
+    - name: "gas_plus_1"
+      absolute_change_usd_per_mmbtu: 1.0
+    - name: "gas_plus_2"
+      absolute_change_usd_per_mmbtu: 2.0
+    - name: "gas_plus_5"
+      absolute_change_usd_per_mmbtu: 5.0
+
+combined_scenarios:
+  enabled: true
+  scenarios:
+    - name: "high_load_high_gas"
+      components:
+        - "load_plus_10"
+        - "gas_plus_2"
+    - name: "severe_price_spike_with_constraint"
+      components:
+        - "severe_up"
+        - "key_interface_binding"
