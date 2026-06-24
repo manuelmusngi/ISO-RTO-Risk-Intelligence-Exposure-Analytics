@@ -1,0 +1,96 @@
+# Portfolio positions and static attributes
+
+portfolio:
+  name: "ACES Midcontinent Portfolio"
+  book: "MIDCON_POWER"
+  base_currency: "USD"
+
+load:
+  - id: "LOAD_ZONE_MISO_NORTH"
+    iso: "MISO"
+    zone: "MISO_NORTH"
+    type: "load_obligation"
+    peak_mw: 500
+    shape: "residential_mixed"
+    pricing_node: "NODE_MISO_NORTH_HUB"
+
+  - id: "LOAD_ZONE_PJM_WEST"
+    iso: "PJM"
+    zone: "PJM_WEST"
+    type: "load_obligation"
+    peak_mw: 300
+    shape: "industrial_mixed"
+    pricing_node: "NODE_PJM_WEST_HUB"
+
+generation:
+  - id: "GEN_CC_MISO_01"
+    iso: "MISO"
+    plant_name: "MISO_CC_01"
+    fuel: "gas"
+    capacity_mw: 350
+    min_mw: 100
+    heat_rate_btu_per_kwh: 7200
+    pricing_node: "NODE_MISO_CC_01"
+    outage_class: "planned_forced"
+
+  - id: "GEN_WIND_MISO_01"
+    iso: "MISO"
+    plant_name: "MISO_WIND_01"
+    fuel: "wind"
+    capacity_mw: 200
+    min_mw: 0
+    pricing_node: "NODE_MISO_WIND_01"
+    outage_class: "intermittent"
+
+bilateral_contracts:
+  - id: "BILAT_MISO_2026Q1_01"
+    iso: "MISO"
+    direction: "sell"
+    volume_mw: 150
+    tenor: "2026-01-01_to_2026-03-31"
+    hub: "MISO_NORTH_HUB"
+    price_usd_per_mwh: 42.50
+    product: "7x24"
+
+  - id: "BILAT_PJM_2026Q1_01"
+    iso: "PJM"
+    direction: "buy"
+    volume_mw: 100
+    tenor: "2026-01-01_to_2026-03-31"
+    hub: "PJM_WEST_HUB"
+    price_usd_per_mwh: 45.00
+    product: "5x16"
+
+virtuals:
+  - id: "VIRT_MISO_DA_RT_SPREAD_01"
+    iso: "MISO"
+    type: "increment_offer"
+    node: "NODE_MISO_NORTH_HUB"
+    volume_mw: 50
+    hours: [ "HE08", "HE09", "HE10" ]
+    trading_days: "weekdays"
+
+  - id: "VIRT_PJM_DA_RT_SPREAD_01"
+    iso: "PJM"
+    type: "decrement_bid"
+    node: "NODE_PJM_WEST_HUB"
+    volume_mw: 40
+    hours: [ "HE16", "HE17", "HE18" ]
+    trading_days: "weekdays"
+
+ftr_positions:
+  - id: "FTR_MISO_NORTH_TO_SOUTH_2026"
+    iso: "MISO"
+    source_node: "NODE_MISO_NORTH_HUB"
+    sink_node: "NODE_MISO_SOUTH_HUB"
+    mw: 100
+    tenor: "2026-01-01_to_2026-12-31"
+    auction_round: "ANNUAL_2026"
+
+  - id: "FTR_PJM_WEST_TO_EAST_2026"
+    iso: "PJM"
+    source_node: "NODE_PJM_WEST_HUB"
+    sink_node: "NODE_PJM_EAST_HUB"
+    mw: 75
+    tenor: "2026-01-01_to_2026-12-31"
+    auction_round: "ANNUAL_2026"
