@@ -56,7 +56,7 @@
 
 ## 🔭 Platform Overview
 
-This project is an exercise in building and an Analytics System for the power markets.
+This project is an exercise in building an Analytics System for the power markets.
 
 The **ISO/RTO Risk Intelligence & Exposure Analytics** is a production-grade data and analytics system that ingests, transforms, and models wholesale electricity market data from six North American ISOs/RTOs. It delivers **real-time locational marginal price (LMP) analytics**, **congestion risk scoring**, **financial transmission right (FTR) valuation**, and **mark-to-market (MtM) exposure reporting** — all within a unified, auditable data pipeline.
 
