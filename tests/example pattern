@@ -1,0 +1,7 @@
+# tests/test_ingestion.py
+from src.ingestion.data_loader import load_sample_lmps
+
+
+def test_load_sample_lmps():
+    df = load_sample_lmps()
+    assert not df.empty
