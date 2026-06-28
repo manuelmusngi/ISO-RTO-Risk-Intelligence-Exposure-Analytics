@@ -36,7 +36,7 @@
 
 ---
 
-## 🗺️ Table of Contents
+#### 🗺️ Table of Contents
 
 - [Platform Overview](#-platform-overview)
 - [Key Highlights](#-key-highlights)
@@ -54,7 +54,7 @@
 
 ---
 
-## 🔭 Platform Overview
+#### 🔭 Platform Overview
 
 This project is an exercise in building an Analytics System for the power markets.
 
@@ -75,7 +75,7 @@ spanning 6 ISOs, 18,000+ pricing nodes, and 24 settlement intervals per hour.
 
 ---
 
-## 🌟 Key Highlights
+#### 🌟 Key Highlights
 
 | Capability | Detail |
 |---|---|
@@ -92,7 +92,7 @@ spanning 6 ISOs, 18,000+ pricing nodes, and 24 settlement intervals per hour.
 
 ---
 
-## 🏛️ Architecture
+#### 🏛️ Architecture
 
 ### System Architecture Overview
 
@@ -240,7 +240,7 @@ erDiagram
 
 ---
 
-## 🌐 Data Sources & Market Coverage
+#### 🌐 Data Sources & Market Coverage
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -254,7 +254,7 @@ erDiagram
 │  🦞 ISO-NE       │  ~1,000   │  5-min RT   │  DA/RT LMP, FTR                │
 └──────────────────┴───────────┴─────────────┴────────────────────────────────┘
 ```
-## 📁 Repository Structure
+#### 📁 Repository Structure
 
 iso-rto-risk-intelligence/\
 │
@@ -361,9 +361,9 @@ iso-rto-risk-intelligence/\
 
 ---
 
-## 📦 Module Deep Dive
+#### 📦 Module Deep Dive
 
-### 🔌 `iso_connectors/` — Market Data Ingestion
+#### 🔌 `iso_connectors/` — Market Data Ingestion
 
 Standardized async connectors for each ISO's public API. Each connector implements a common `BaseISOConnector` interface, handles rate limiting, retry logic with exponential backoff, and schema validation before persistence.
 
@@ -389,7 +389,7 @@ lmps = await connector.fetch_rt_lmp(
 
 ---
 
-### ⚙️ `dbt_models/` — Transformation Layer
+#### ⚙️ `dbt_models/` — Transformation Layer
 
 A fully lineage-tracked dbt project organized into four layers. Every model includes column-level documentation, data freshness SLAs, and a companion Great Expectations suite.
 
@@ -474,7 +474,7 @@ An **XGBoost + LSTM ensemble** producing probabilistic forecasts at three horizo
 
 ---
 
-### 🔔 `alerting/` — Real-Time Notifications
+#### 🔔 `alerting/` — Real-Time Notifications
 
 Event-driven alert system that monitors:
 - 🚨 **Binding constraint activations** — routed to Slack `#congestion-alerts`
@@ -484,7 +484,7 @@ Event-driven alert system that monitors:
 
 ---
 
-## 🚀 Quickstart
+#### 🚀 Quickstart
 
 ### Prerequisites
 
@@ -496,7 +496,7 @@ Event-driven alert system that monitors:
 | dbt Core | 1.8+ | Transformation layer |
 | Airflow | 2.9+ | Orchestration |
 
-### 1. Clone & Environment Setup
+#### 1. Clone & Environment Setup
 
 ```bash
 git clone https://github.com/<your-username>/iso-rto-risk-platform.git
@@ -606,7 +606,7 @@ open http://localhost:8000/docs
 
 ---
 
-## ⚙️ Configuration
+#### ⚙️ Configuration
 
 All configuration is managed via `config/settings.py` using Pydantic Settings with environment variable overrides.
 
@@ -651,7 +651,7 @@ Tableau workbook templates are located in `dashboards/tableau/`.
 
 ---
 
-## 🧪 Testing & Validation
+#### 🧪 Testing & Validation
 
 ```bash
 # Run full unit test suite
@@ -692,7 +692,7 @@ TOTAL                             94%
 
 ---
 
-## 🗓️ Roadmap
+#### 🗓️ Roadmap
 
 - [x] Real-time LMP ingestion — all 6 ISOs
 - [x] LMP decomposition (energy / congestion / loss)
@@ -710,7 +710,7 @@ TOTAL                             94%
 
 ---
 
-## 🤝 Contributing
+#### 🤝 Contributing
 
 Contributions are welcome. Please follow the workflow below:
 
