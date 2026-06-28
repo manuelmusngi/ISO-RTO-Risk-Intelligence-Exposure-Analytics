@@ -6,22 +6,6 @@
 
 <br/>
 
-<!-- BADGE ROW 1 — Status & Language -->
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-PostgreSQL%2015-336791?style=flat-square&logo=postgresql&logoColor=white)
-![PySpark](https://img.shields.io/badge/PySpark-3.5-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
-![dbt](https://img.shields.io/badge/dbt-Core%201.8-FF694B?style=flat-square&logo=dbt&logoColor=white)
-
-<!-- BADGE ROW 2 — Infrastructure -->
-![Azure](https://img.shields.io/badge/Azure-Data%20Platform-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![Airflow](https://img.shields.io/badge/Apache%20Airflow-2.9-017CEE?style=flat-square&logo=apacheairflow&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat-square&logo=terraform&logoColor=white)
-
-<!-- BADGE ROW 3 — Quality & Coverage -->
-![Build](https://img.shields.io/badge/Build-Passing-2ea44f?style=flat-square&logo=githubactions&logoColor=white)
-![Coverage](https://img.shields.io/badge/Coverage-94%25-brightgreen?style=flat-square&logo=pytest&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 ![Markets](https://img.shields.io/badge/Markets-CAISO%20%7C%20ERCOT%20%7C%20MISO%20%7C%20PJM%20%7C%20NYISO%20%7C%20ISONE-F5A623?style=flat-square)
 
 <br/>
