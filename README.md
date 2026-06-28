@@ -94,7 +94,7 @@ spanning 6 ISOs, 18,000+ pricing nodes, and 24 settlement intervals per hour.
 
 #### 🏛️ Architecture
 
-### System Architecture Overview
+#### System Architecture Overview
 
 ```mermaid
 graph TB
