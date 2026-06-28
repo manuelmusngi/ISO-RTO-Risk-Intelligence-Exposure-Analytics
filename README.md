@@ -486,7 +486,7 @@ Event-driven alert system that monitors:
 
 #### 🚀 Quickstart
 
-### Prerequisites
+#### Prerequisites
 
 | Tool | Version | Purpose |
 |---|---|---|
@@ -511,7 +511,7 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 ```
 
-### 2. Configure Environment Variables
+#### 2. Configure Environment Variables
 
 ```bash
 cp .env.example .env
@@ -520,7 +520,7 @@ cp .env.example .env
 Edit `.env` with your credentials:
 
 ```ini
-# Database
+#### Database
 DATABASE_URL=postgresql://risk_user:password@localhost:5432/iso_risk_db
 
 # ISO API Credentials
@@ -532,16 +532,16 @@ MISO_API_KEY=your_miso_key
 NYISO_API_KEY=your_nyiso_key
 ISONE_API_KEY=your_isone_key
 
-# Azure (Production)
+#### Azure (Production)
 AZURE_STORAGE_ACCOUNT=your_storage_account
 AZURE_STORAGE_KEY=your_storage_key
 
-# Alerting
+#### Alerting
 SLACK_BOT_TOKEN=xoxb-your-slack-token
 SLACK_ALERT_CHANNEL=#risk-alerts
 ```
 
-### 3. Launch Local Infrastructure
+#### 3. Launch Local Infrastructure
 
 ```bash
 # Start PostgreSQL, Redis, Airflow, and supporting services
@@ -556,7 +556,7 @@ docker compose ps
 # iso-risk-airflow     running   0.0.0.0:8080->8080/tcp
 ```
 
-### 4. Initialize the Database & Run dbt
+#### 4. Initialize the Database & Run dbt
 
 ```bash
 # Run database migrations
@@ -570,7 +570,7 @@ dbt run                     # Build all transformation models
 dbt test                    # Run all data quality tests
 ```
 
-### 5. Load Historical Data
+#### 5. Load Historical Data
 
 ```bash
 # Backfill 90 days of LMP data across all ISOs
@@ -584,7 +584,7 @@ python scripts/historical_backfill.py \
 open http://localhost:8080
 ```
 
-### 6. Start Real-Time Ingestion
+#### 6. Start Real-Time Ingestion
 
 ```bash
 # Trigger live DAGs via Airflow CLI
@@ -594,7 +594,7 @@ airflow dags trigger binding_constraint_monitor
 # Or enable via Airflow UI at http://localhost:8080
 ```
 
-### 7. Launch the API & Dashboard
+#### 7. Launch the API & Dashboard
 
 ```bash
 # Start FastAPI risk API
@@ -635,7 +635,7 @@ class RiskSettings(BaseSettings):
 
 ---
 
-## 📊 Dashboards & Reporting
+#### 📊 Dashboards & Reporting
 
 | Dashboard | Description | Refresh |
 |---|---|---|
