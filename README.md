@@ -437,7 +437,7 @@ dbt_models/
 
 ---
 
-### 📐 `analytics_engine/` — Quantitative Models
+#### 📐 `analytics_engine/` — Quantitative Models
 
 #### LMP Decomposer
 Decomposes observed LMPs into energy, congestion, and loss components using the standard nodal pricing identity. Validates decomposition residuals are within ISO-published tolerances.
