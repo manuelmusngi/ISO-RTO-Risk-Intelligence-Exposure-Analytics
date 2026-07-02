@@ -718,11 +718,11 @@ PJM, MISO, ERCOT Market Manuals
 Provide the official methodologies for FTR/CRR auction clearing, settlement rules, and congestion rent allocation. These documents directly inform the platform’s mark‑to‑market engine and portfolio exposure models.
 
 - Volatility, Tail Risk & Extreme Events
-Anderson & Davison (2020) — Modeling Extreme Events in Electricity Markets  
-Supports the VaR/CVaR engine and tail‑risk scenario generation, especially during scarcity pricing or high‑volatility intervals.
+ - Anderson & Davison (2020) — Modeling Extreme Events in Electricity Markets  
+   Supports the VaR/CVaR engine and tail‑risk scenario generation, especially during scarcity pricing or high‑volatility intervals.
 
-Holland & Mansur (2008) — The Short-Run Effects of Time-Varying Gas Prices on Electricity Markets  
-Provides empirical evidence for gas‑power coupling, informing the fuel shock module and market exposure engine.
+- Holland & Mansur (2008) — The Short-Run Effects of Time-Varying Gas Prices on Electricity Markets  
+  Provides empirical evidence for gas‑power coupling, informing the fuel shock module and market exposure engine.
 
 - Outage Modeling & Reliability Analytics
 Billinton & Allan (1996) — Reliability Evaluation of Power Systems  
