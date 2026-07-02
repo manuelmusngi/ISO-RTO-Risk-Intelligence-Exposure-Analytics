@@ -694,27 +694,34 @@ TOTAL                             94%
 
 ---
 📚 Research References
+
 The ISO/RTO Risk Intelligence & Exposure Analytics Platform is grounded in peer‑reviewed research, ISO/RTO market design literature, and industry‑standard risk methodologies. The following works form the theoretical and practical foundation for the system’s LMP modeling, congestion analytics, FTR valuation, scenario generation, and risk measurement.
 
 Locational Marginal Pricing (LMP) Theory & Market Design
-O’Neill et al. (2005) — Efficient Market Clearing with Financial Transmission Rights  
+
+O’Neill et al. (2005) — Efficient Market Clearing with Financial Transmission Rights
+
 Establishes the mathematical relationship between LMPs, congestion, and shadow prices. Forms the backbone of the platform’s congestion decomposition and FTR valuation engine.
 
 Bessembinder & Lemmon (2002) — Equilibrium Pricing and Optimal Hedging in Electricity Forward Markets  
 Provides the theoretical basis for DA/RT spread modeling, forward curve construction, and financial exposure analytics.
 
 Congestion, Transmission Constraints & Grid Risk
+
 NERC MOD‑032 / MOD‑033 Standards  
 Define modeling requirements for load forecasts, system dynamics, and constraint validation across ISOs/RTOs. Supports the platform’s constraint scenario engine and outage modeling.
 
-Risk-Based Approaches for ISO/RTO Asset Managers (IEEE)  
+Risk-Based Approaches for ISO/RTO Asset Managers (IEEE)
+
 Explores risk scoring, asset reliability, and operational decision frameworks used by ISOs/RTOs. Reinforces the platform’s congestion risk scoring and operator dashboards.
 
 FTR / CRR Valuation & Auction Economics
+
 PJM, MISO, ERCOT Market Manuals  
 Provide the official methodologies for FTR/CRR auction clearing, settlement rules, and congestion rent allocation. These documents directly inform the platform’s mark‑to‑market engine and portfolio exposure models.
 
 Volatility, Tail Risk & Extreme Events
+
 Anderson & Davison (2020) — Modeling Extreme Events in Electricity Markets  
 Supports the VaR/CVaR engine and tail‑risk scenario generation, especially during scarcity pricing or high‑volatility intervals.
 
